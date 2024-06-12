@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chack BMI</title>
+    <style>
+        body {
+            background-color:rgba(0, 0, 0, 1);
+            overflow: scroll;
+        }
+        .main{
+            position: fixed;
+            top:20%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            background-color: rgba(255, 255, 255,.7);
+            text-align: center;
+            color: rgb(255, 255, 255);
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            margin: 0px;
+            overflow: scroll;
+        }
+
+        .answer{
+            position: fixed;
+            background-color: white;
+            border-radius: px;
+            color: rgb(42, 52, 106);
+            font-size: auto;
+            top:70%;
+            width: 50%;
+            height: 15%;
+            justify-content: center;
+            align-items: center;
+            overflow: scroll;
+            border-bottom-right-radius:10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        input{
+            width: 175px; 
+            border-radius: 10px;
+            border: solid white;
+            box-shadow: 0px 0px 5px rgb(74, 66, 66);
+        }
+        
+        button{
+            position: relative;
+            border-radius: 10px;
+            border: solid white;
+            box-shadow: 0px 0px 5px rgb(74, 66, 66);
+        }
+
+    </style>
+</head>
+<body>
+        <div class="main">
+            <h1>Chack BMI</h1>
+            
+            <div class="inweight">
+                <p for="weight">Enter Your weight:</p>
+                <input id="weight" type="text" placeholder="Put Your weight is KG..." required>
+            </div>
+            <div class="inheight">
+                <p for="height">Enter Your height:</p>
+                <input  id="height" type="text" placeholder="Put Your Height in Meter..." required>
+            </div>
+            <div>
+                <button style="margin: 20px;" id="res">Konw You BMI</button>
+            </div>
+            <div class="answer">
+                <p id="res-num"></p>
+                <p id="res-word"></p>
+            </div>
+        </div>
+</body>
+<script>
+    document.getElementById("res").addEventListener("click",function(){
+        var height = document.getElementById("height").value
+        var weight = document.getElementById("weight").value
+        var answer = weight / (height * height)
+        var ans = "None"
+        if(answer < 18)
+            ans = "Thinness"
+        else if(answer >=18 && answer <= 24.9)
+            ans = "Ideal weight"
+        else if (answer >= 25 && answer <= 29.9)
+            ans = "Overweight"
+        else if (answer >= 30 && answer <= 34.9)
+            ans = "Obesity, First degree"
+        else if (answer >= 35 && answer <= 39.9)
+            ans = "Obesity, Second degree"
+        else if(answer >= 40)
+            ans = "Serious obesity"
+        
+        if(ans == "None"){
+            ans = "Your Didn't Enter Data."
+            document.getElementById("res-num").innerHTML = "BMI Number: " + ans
+            document.getElementById("res-word").innerHTML = "State BMI: " + ans
+        }
+        else {
+        document.getElementById("res-num").innerHTML = "BMI Number: " + answer.toFixed(2)
+        document.getElementById("res-word").innerHTML = "State BMI: " + ans
+        }
+    })
+</script>
+</html>
