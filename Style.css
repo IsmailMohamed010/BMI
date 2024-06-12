@@ -1,0 +1,59 @@
+body {
+    background-color:rgba(0, 0, 0, 1); 
+}
+
+.main::-webkit-scrollbar {
+    width: 0px;
+}
+
+.answer::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+.main{
+    position: fixed;
+    top:20%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255,.7);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin: 0px;
+    overflow: scroll;
+}
+
+.answer{
+    position: fixed;
+    background-color: white;
+    border-radius: px;
+    color: rgb(42, 52, 106);
+    font-size: auto;
+    top:70%;
+    width: 50%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius: 10px;
+}
+
+input{
+    width: 175px; 
+    border-radius: 10px;
+    border: solid white;
+    box-shadow: 0px 0px 10px rgb(74, 66, 66);
+}
+
+button{
+    position: relative;
+    border-radius: 10px;
+    border: solid white;
+    box-shadow: 0px 0px 5px rgb(74, 66, 66);
+}
